@@ -1,6 +1,6 @@
 {
   "name": "rn-youtube-player",
-  "version": "1.0.1",
+  "version": "0.0.1",
   "description": "YouTube Player for react native Android",
   "main": "index.js",
   "scripts": {
