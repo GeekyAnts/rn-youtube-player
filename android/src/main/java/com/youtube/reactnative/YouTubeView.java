@@ -56,7 +56,7 @@ public class YouTubeView extends FrameLayout {
   protected void onAttachedToWindow() {
     super.onAttachedToWindow();
     youTubePlayerView.getPlayerUiController()
-        .showYouTubeButton(false)
+        .showYouTubeButton(true)
         .showFullscreenButton(youTubePlayerProps.isShowFullScreenButton())
         .showSeekBar(youTubePlayerProps.isShowSeekBar())
         .showPlayPauseButton(youTubePlayerProps.isShowPlayPauseButton());
@@ -89,7 +89,7 @@ public class YouTubeView extends FrameLayout {
         }
 
         if (youTubePlayerProps.isFullscreen()) {
-          youTubePlayerView.enterFullScreen();
+          // youTubePlayerView.enterFullScreen();
         }
       }
 
@@ -111,7 +111,7 @@ public class YouTubeView extends FrameLayout {
         if (youTubePlayer != null) {
           youTubePlayer.pause();
         }
-        openFullscreenPlayer();
+        // openFullscreenPlayer();
       }
 
       @Override
