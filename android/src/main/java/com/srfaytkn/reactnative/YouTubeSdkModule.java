@@ -27,7 +27,7 @@ public class YouTubeSdkModule extends ReactContextBaseJavaModule {
       UIManagerModule uiManager = reactContext.getNativeModule(UIManagerModule.class);
       uiManager.addUIBlock(nvhm -> {
         YouTubeView youTubeView = (YouTubeView) nvhm.resolveView(reactTag);
-        promise.resolve(youTubeView.getYouTubePlayerProps().getTracker().getCurrentSecond());
+        // promise.resolve(youTubeView.getYouTubePlayerProps().getTracker().getCurrentSecond());
       });
     } catch (Exception e) {
       promise.reject("getCurrentTime", e);
@@ -40,7 +40,7 @@ public class YouTubeSdkModule extends ReactContextBaseJavaModule {
       UIManagerModule uiManager = reactContext.getNativeModule(UIManagerModule.class);
       uiManager.addUIBlock(nvhm -> {
         YouTubeView youTubeView = (YouTubeView) nvhm.resolveView(reactTag);
-        promise.resolve(youTubeView.getYouTubePlayerProps().getTracker().getVideoDuration());
+        // promise.resolve(youTubeView.getYouTubePlayerProps().getTracker().getVideoDuration());
       });
     } catch (IllegalViewOperationException e) {
       promise.reject("getVideoDuration", e);

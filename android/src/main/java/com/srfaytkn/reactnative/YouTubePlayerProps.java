@@ -1,10 +1,10 @@
 package com.srfaytkn.reactnative;
 
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.utils.YouTubePlayerTracker;
+// import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.utils.YouTubePlayerTracker;
 
 public class YouTubePlayerProps {
 
-  private YouTubePlayerTracker tracker;
+  // private YouTubePlayerTracker tracker;
   private String videoId;
   private boolean autoPlay;
   private boolean fullscreen;
@@ -14,12 +14,12 @@ public class YouTubePlayerProps {
   private boolean showPlayPauseButton;
 
   public YouTubePlayerProps() {
-    this.tracker = new YouTubePlayerTracker();
+    // this.tracker = new YouTubePlayerTracker();
   }
 
-  public YouTubePlayerTracker getTracker() {
-    return tracker;
-  }
+  // public YouTubePlayerTracker getTracker() {
+  // return tracker;
+  // }
 
   public String getVideoId() {
     return videoId;
