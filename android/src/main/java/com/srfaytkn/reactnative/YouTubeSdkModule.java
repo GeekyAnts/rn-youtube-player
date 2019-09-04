@@ -21,29 +21,31 @@ public class YouTubeSdkModule extends ReactContextBaseJavaModule {
     return "YouTubeSdk";
   }
 
-  @ReactMethod
-  public void getCurrentTime(final int reactTag, final Promise promise) {
-    try {
-      UIManagerModule uiManager = reactContext.getNativeModule(UIManagerModule.class);
-      uiManager.addUIBlock(nvhm -> {
-        YouTubeView youTubeView = (YouTubeView) nvhm.resolveView(reactTag);
-        promise.resolve(youTubeView.getYouTubePlayerProps().getTracker().getCurrentSecond());
-      });
-    } catch (Exception e) {
-      promise.reject("getCurrentTime", e);
-    }
-  }
+  // @ReactMethod
+  // public void getCurrentTime(final int reactTag, final Promise promise) {
+  // try {
+  // UIManagerModule uiManager =
+  // reactContext.getNativeModule(UIManagerModule.class);
+  // uiManager.addUIBlock(nvhm -> {
+  // YouTubeView youTubeView = (YouTubeView) nvhm.resolveView(reactTag);
+  // promise.resolve(youTubeView.getYouTubePlayerProps().getTracker().getCurrentSecond());
+  // });
+  // } catch (Exception e) {
+  // promise.reject("getCurrentTime", e);
+  // }
+  // }
 
-  @ReactMethod
-  public void getVideoDuration(final int reactTag, final Promise promise) {
-    try {
-      UIManagerModule uiManager = reactContext.getNativeModule(UIManagerModule.class);
-      uiManager.addUIBlock(nvhm -> {
-        YouTubeView youTubeView = (YouTubeView) nvhm.resolveView(reactTag);
-        promise.resolve(youTubeView.getYouTubePlayerProps().getTracker().getVideoDuration());
-      });
-    } catch (IllegalViewOperationException e) {
-      promise.reject("getVideoDuration", e);
-    }
-  }
+  // @ReactMethod
+  // public void getVideoDuration(final int reactTag, final Promise promise) {
+  // try {
+  // UIManagerModule uiManager =
+  // reactContext.getNativeModule(UIManagerModule.class);
+  // uiManager.addUIBlock(nvhm -> {
+  // YouTubeView youTubeView = (YouTubeView) nvhm.resolveView(reactTag);
+  // promise.resolve(youTubeView.getYouTubePlayerProps().getTracker().getVideoDuration());
+  // });
+  // } catch (IllegalViewOperationException e) {
+  // promise.reject("getVideoDuration", e);
+  // }
+  // }
 }

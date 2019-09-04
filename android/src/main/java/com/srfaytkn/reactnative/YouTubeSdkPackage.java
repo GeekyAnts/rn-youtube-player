@@ -17,8 +17,6 @@ public class YouTubeSdkPackage implements ReactPackage {
 
   @Override
   public List<ViewManager> createViewManagers(@Nonnull ReactApplicationContext reactContext) {
-    return Collections.singletonList(
-        new YouTubeViewManager()
-    );
+    return Collections.singletonList(new YouTubeViewManager());
   }
 }

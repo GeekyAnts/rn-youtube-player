@@ -30,51 +30,42 @@ public class YouTubeViewManager extends SimpleViewManager<YouTubeView> {
   }
 
   @Override
-  public void receiveCommand(@Nonnull YouTubeView view, int commandId,
-      @Nullable ReadableArray args) {
+  public void receiveCommand(@Nonnull YouTubeView view, int commandId, @Nullable ReadableArray args) {
     switch (commandId) {
-      case COMMAND_SEEK_TO:
-        view.seekTo(args.getInt(0));
-        break;
-      case COMMAND_PLAY:
-        view.play();
-        break;
-      case COMMAND_PAUSE:
-        view.pause();
-        break;
-      case COMMAND_LOAD_VIDEO:
-        view.getYouTubePlayerProps().setVideoId(args.getString(0));
-        view.getYouTubePlayerProps().setStartTime(args.getInt(1));
-        view.loadVideo(args.getString(0), args.getInt(1));
-        break;
-      default:
-        throw new IllegalArgumentException(String.format(
-            "Unsupported command %d received by %s.",
-            commandId,
-            getClass().getSimpleName()));
+    case COMMAND_SEEK_TO:
+      // view.seekTo(args.getInt(0));
+      break;
+    case COMMAND_PLAY:
+      // view.play();
+      break;
+    case COMMAND_PAUSE:
+      // view.pause();
+      break;
+    case COMMAND_LOAD_VIDEO:
+      view.getYouTubePlayerProps().setVideoId(args.getString(0));
+      view.getYouTubePlayerProps().setStartTime(args.getInt(1));
+      view.loadVideo("S0Q4gqBUs7c", 0);
+      break;
+    default:
+      throw new IllegalArgumentException(
+          String.format("Unsupported command %d received by %s.", commandId, getClass().getSimpleName()));
     }
   }
 
   @Nullable
   @Override
   public Map<String, Integer> getCommandsMap() {
-    return MapBuilder.of(
-        "seekTo", COMMAND_SEEK_TO,
-        "play", COMMAND_PLAY,
-        "pause", COMMAND_PAUSE,
-        "loadVideo", COMMAND_LOAD_VIDEO
-    );
+    return MapBuilder.of("seekTo", COMMAND_SEEK_TO, "play", COMMAND_PLAY, "pause", COMMAND_PAUSE, "loadVideo",
+        COMMAND_LOAD_VIDEO);
   }
 
   @Nullable
   @Override
   public Map<String, Object> getExportedCustomDirectEventTypeConstants() {
-    return MapBuilder.of(
-        "onReady", MapBuilder.of("registrationName", "onReady"),
-        "onError", MapBuilder.of("registrationName", "onError"),
-        "onChangeState", MapBuilder.of("registrationName", "onChangeState"),
-        "onChangeFullscreen", MapBuilder.of("registrationName", "onChangeFullscreen")
-    );
+    return MapBuilder.of("onReady", MapBuilder.of("registrationName", "onReady"), "onError",
+        MapBuilder.of("registrationName", "onError"), "onChangeState",
+        MapBuilder.of("registrationName", "onChangeState"), "onChangeFullscreen",
+        MapBuilder.of("registrationName", "onChangeFullscreen"));
   }
 
   @ReactProp(name = "videoId")
@@ -87,29 +78,30 @@ public class YouTubeViewManager extends SimpleViewManager<YouTubeView> {
     view.getYouTubePlayerProps().setAutoPlay(autoPlay);
   }
 
-  @ReactProp(name = "fullscreen")
-  public void setPropFullscreen(YouTubeView view, boolean fullscreen) {
-    view.getYouTubePlayerProps().setFullscreen(fullscreen);
-  }
+  // @ReactProp(name = "fullscreen")
+  // public void setPropFullscreen(YouTubeView view, boolean fullscreen) {
+  // view.getYouTubePlayerProps().setFullscreen(fullscreen);
+  // }
 
-  @ReactProp(name = "startTime")
-  public void setPropStartTime(YouTubeView view, float startTime) {
-    view.getYouTubePlayerProps().setStartTime(startTime);
-  }
+  // @ReactProp(name = "startTime")
+  // public void setPropStartTime(YouTubeView view, float startTime) {
+  // view.getYouTubePlayerProps().setStartTime(startTime);
+  // }
 
-  @ReactProp(name = "showFullScreenButton")
-  public void setPropShowFullScreenButton(YouTubeView view, boolean showFullScreenButton) {
-    view.getYouTubePlayerProps().setShowFullScreenButton(showFullScreenButton);
-  }
+  // @ReactProp(name = "showFullScreenButton")
+  // public void setPropShowFullScreenButton(YouTubeView view, boolean
+  // showFullScreenButton) {
+  // view.getYouTubePlayerProps().setShowFullScreenButton(showFullScreenButton);
+  // }
 
-  @ReactProp(name = "showSeekBar")
-  public void setPropShowSeekBar(YouTubeView view, boolean showSeekBar) {
-    view.getYouTubePlayerProps().setShowSeekBar(showSeekBar);
-  }
+  // @ReactProp(name = "showSeekBar")
+  // public void setPropShowSeekBar(YouTubeView view, boolean showSeekBar) {
+  // view.getYouTubePlayerProps().setShowSeekBar(showSeekBar);
+  // }
 
-  @ReactProp(name = "showPlayPauseButton")
-  public void setPropShowPlayPauseButton(YouTubeView view, boolean showPlayPauseButton) {
-    view.getYouTubePlayerProps().setShowPlayPauseButton(showPlayPauseButton);
-  }
+  // @ReactProp(name = "showPlayPauseButton")
+  // public void setPropShowPlayPauseButton(YouTubeView view, boolean
+  // showPlayPauseButton) {
+  // view.getYouTubePlayerProps().setShowPlayPauseButton(showPlayPauseButton);
+  // }
 }
-
