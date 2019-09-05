@@ -1,6 +1,6 @@
 package com.srfaytkn.reactnative;
 
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.utils.YouTubePlayerTracker;
+import com.pierfrancescosoffritti.androidyoutubeplayer.utils.YouTubePlayerTracker;
 
 public class YouTubePlayerProps {
 
