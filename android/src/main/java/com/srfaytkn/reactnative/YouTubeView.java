@@ -81,7 +81,7 @@ public class YouTubeView extends FrameLayout {
       youTubePlayer.addListener(new AbstractYouTubePlayerListener() {
         @Override
         public void onReady() {
-          loadVideo(youTubePlayer, "6JYIGclVQdw");
+          loadVideo(youTubePlayer, youTubePlayerProps.getVideoId());
         }
       });
 
@@ -200,18 +200,17 @@ public class YouTubeView extends FrameLayout {
   // return;
   // }
 
-  // if (youTubePlayerProps.isAutoPlay()) {
-  // youTubePlayer.loadVideo(videoId, startTime);
-  // } else {
-  // youTubePlayer.cueVideo(videoId, startTime);
-  // }
-  // }
-
   private void loadVideo(YouTubePlayer youTubePlayer, String videoId) {
     // if (getLifecycle().getCurrentState() == Lifecycle.State.RESUMED)
     // youTubePlayer.loadVideo(videoId, 0);
     // else
-    youTubePlayer.cueVideo(videoId, 0);
+
+    if (youTubePlayerProps.isAutoPlay()) {
+      youTubePlayer.loadVideo(videoId, 0);
+    } else {
+      youTubePlayer.cueVideo(videoId, 0);
+    }
+    // youTubePlayer.cueVideo(videoId, 0);
 
     // setVideoTitle(youTubePlayerView.getPlayerUIController(), videoId);
   }
